@@ -1,0 +1,94 @@
+.dashboard {
+  padding: 2rem;
+  background: linear-gradient(to right, #f0f4ff, #e5ecff);
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+/* Modern Stat Card */
+.stat-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 300px;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon style */
+.icon-box {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card variants */
+.card-blue {
+  background: linear-gradient(135deg, #4e73df, #375ac2);
+}
+
+.card-green {
+  background: linear-gradient(135deg, #1cc88a, #16a679);
+}
+
+/* Card content */
+.stat-info h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-info p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,247 @@
+/* Main container */
+.patient-list-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+.patient-table,
+.medicine-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.patient-table th,
+.patient-table td,
+.medicine-table th,
+.medicine-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  text-align: left;
+}
+
+.patient-table th,
+.medicine-table th {
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* Buttons */
+.btn-edit,
+.btn-delete,
+.btn-create-icon,
+.btn-add-row,
+.btn-remove-row,
+.btn-save,
+.btn-cancel {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-edit { background: #28a745; color: white; }
+.btn-edit:hover { background: #218838; }
+
+.btn-delete { background: #dc3545; color: white; }
+.btn-delete:hover { background: #c82333; }
+
+.btn-create-icon { background: #007bff; color: white; }
+.btn-create-icon:hover { background: #0069d9; }
+
+.btn-save { background: #007bff; color: white; }
+.btn-save:hover { background: #0056b3; }
+
+.btn-cancel { background: #6c757d; color: white; }
+.btn-cancel:hover { background: #5a6268; }
+
+.btn-add-row { background-color: #28a745; color: white; }
+.btn-add-row:hover { background-color: #218838; }
+
+.btn-remove-row { background-color: #dc3545; color: white; }
+.btn-remove-row:hover { background-color: #c82333; }
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding-top: 50px;
+  z-index: 1000;
+}
+
+.popup-inner {
+  background: #ffffff;
+  width: 95%;
+  max-width: 1100px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-inner h3 {
+  background: #007bff;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form inputs */
+.popup-inner input,
+.popup-inner textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  min-height: 60px;
+}
+
+.medicine-table input[type="checkbox"],
+.test-table input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 5px;
+}
+
+/* Patient Info section */
+.patient-info p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Button group layout */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================ */
+/* 🧪 Test Section Styling */
+/* ============================ */
+.test-section {
+  margin-top: 30px;
+}
+
+.test-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.test-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.test-table th,
+.test-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.test-table th {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.test-table input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.test-table td button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+.test-table td button:hover {
+  background: #c82333;
+}
+.styled-select,
+.styled-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+
+.popup-inner select {
+  padding: 8px;
+  margin-top: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.medicine-table, .test-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.medicine-table th, .test-table th,
+.medicine-table td, .test-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.btn-save {
+  background: green;
+  color: white;
+  padding: 10px 20px;
+}
+.btn-cancel {
+  background: crimson;
+  color: white;
+  padding: 10px 20px;
+}
+.btnmode{
+  display: flex;
+}
+

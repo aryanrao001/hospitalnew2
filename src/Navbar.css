@@ -1,0 +1,78 @@
+.navbar {
+  height: 54px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Added for better spacing */
+  padding: 0 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Menu button */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* Search icon */
+.search {
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: add logo or nav title */
+.navbar-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+
+  .navbar-title {
+    font-size: 1rem;
+  }
+
+  .menu-btn,
+  .search {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .menu-btn,
+  .search {
+    font-size: 1.1rem;
+    padding: 0.25rem;
+  }
+
+  .navbar-title {
+    font-size: 0.95rem;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+
+

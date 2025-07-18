@@ -1,0 +1,128 @@
+.medication-check-container {
+  padding: 40px 50px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6fa;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 🩺 Heading */
+.medication-check-container h2 {
+  font-size: 36px;
+  color: #007bff;
+  text-align: left;
+  margin-bottom: 30px;
+  font-weight: 700;
+  padding-left: 10px;
+  border-left: 6px solid #007bff;
+}
+
+/* 🔍 Search Row */
+.search-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.search-box input[type="text"] {
+  width: 300px;
+  padding: 14px 18px;
+  font-size: 17px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.search-box input[type="text"]:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+.search-box button {
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  padding: 13px 28px;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.search-box button:hover {
+  transform: scale(1.05);
+}
+
+/* ❌ Error Message */
+.error {
+  color: #e63946;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* 👤 Patient Info Section */
+.patient-info {
+  padding: 20px 10px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.patient-info p {
+  font-size: 18px;
+  color: #222;
+  margin: 10px 0;
+}
+
+/* 💊 Medicine Table - Full width and dashboard style */
+.medicine-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  border: 2px solid #007bff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.medicine-table th,
+.medicine-table td {
+  padding: 16px 22px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.medicine-table th {
+  background-color: #eaf4ff;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.medicine-table tr:hover {
+  background-color: #f9f9f9;
+}
+.test-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.test-table th,
+.test-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+

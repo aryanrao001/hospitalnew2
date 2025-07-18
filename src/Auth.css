@@ -1,0 +1,96 @@
+/* Existing styles (no changes here) */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6b12c9, #2575fc);
+  padding: 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.auth-banner {
+  color: white;
+  max-width: 400px;
+  text-align: left;
+  padding: 1rem;
+}
+
+.auth-card {
+  background: white;
+  padding: 3rem;
+  width: 420px;
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* New: Ensure input fields and selects are full width */
+.input-group .form-control,
+.input-group select {
+  width: 100%;
+}
+
+/* New: Better spacing and flexibility on smaller screens */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+    height: auto; /* prevent forced vertical stretching on mobile */
+  }
+
+  .auth-banner, .auth-card {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .auth-banner h1 {
+    font-size: 2rem;
+  }
+
+  .auth-banner p {
+    font-size: 1rem;
+  }
+
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* New: Fine-tuning for very small screens (phones) */
+@media (max-width: 480px) {
+  .auth-banner h1 {
+    font-size: 1.6rem;
+  }
+
+  .auth-banner p,
+  .hospital-subtext {
+    font-size: 0.9rem;
+  }
+
+  .auth-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .input-group-text {
+    padding: 0.6rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
+
+
+
+
+

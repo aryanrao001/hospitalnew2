@@ -1,0 +1,35 @@
+.doctor-panel-container {
+  padding: 20px;
+  background: #fff;
+}
+.patient-selector {
+  margin-bottom: 20px;
+}
+.prescription-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.prescription-table th,
+.prescription-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.test-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.test-checkbox {
+  background: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.btn-save {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

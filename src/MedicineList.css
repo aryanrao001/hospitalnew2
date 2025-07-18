@@ -1,0 +1,280 @@
+.medicine-list-container {
+  padding: 40px 20px;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.medicine-list-container h2 {
+  font-size: 26px;
+  color: #007bff;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.disease-group {
+  margin-bottom: 40px;
+}
+
+.disease-heading {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  background-color: #e7f1ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.medicine-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.medicine-table th,
+.medicine-table td {
+  border: 1px solid #ddd;
+  padding: 12px 14px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.medicine-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.medicine-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.delete-btn {
+  padding: 6px 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+.no-data {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.edit-btn {
+  background: #17a2b8;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edit-btn:hover {
+  background-color: #138496;
+}
+
+/* Popup Overlay */
+.edit-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Popup Box */
+.edit-popup-inner {
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  transform: translateY(0); /* Always center */
+}
+
+/* Title */
+.edit-popup-inner h3 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Form Groups */
+.edit-popup-inner .form-group {
+  margin-bottom: 18px;
+}
+
+.edit-popup-inner label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+.edit-popup-inner input[type="text"],
+.edit-popup-inner input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #fefefe;
+  transition: 0.2s ease;
+}
+
+.edit-popup-inner input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Dose Unique Style */
+.dose-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.dose-options label {
+  background: #e6f0ff;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007bff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #007bff;
+}
+
+.dose-options input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  background: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.dose-options input[type="checkbox"]:checked {
+  background-color: #007bff;
+}
+
+.dose-options input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Button Area */
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+/* Close Button (optional) */
+.edit-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-popup-close:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.action-btns{
+  display: flex;
+}
+.dose-check-row {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dose-check-row label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+
+

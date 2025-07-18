@@ -1,0 +1,235 @@
+.add-medicine-container {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-box {
+  background: #fff;
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 60px;
+  border-radius: 0;
+  box-shadow: none;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.form-box h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.form-flex-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left form container */
+.left-form {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Right medicine cards */
+.right-medicines {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+/* Form group elements */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #fefefe;
+  transition: 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Dose options */
+.dose-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dose-options label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #444;
+}
+
+/* Save Button */
+.btn-save {
+  background: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+/* Medicine Card */
+.medicine-group {
+  width: 300px;
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #007bff20;
+}
+
+/* Action buttons for each medicine */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-add,
+.btn-delete {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-add {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.sticky-save {
+  margin-top: 30px;
+}
+
+/* ✅ RESPONSIVE SECTION */
+@media screen and (max-width: 1024px) {
+  .form-flex-container {
+    flex-direction: column;
+  }
+
+  .right-medicines {
+    justify-content: center;
+  }
+
+  .medicine-group {
+    width: 100%;
+  }
+
+  .form-box {
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-box h2 {
+    font-size: 22px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .dose-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-save {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+
+  .btn-add,
+  .btn-delete {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+

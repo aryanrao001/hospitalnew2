@@ -1,0 +1,129 @@
+.sidebar {
+  width: 240px;
+  background: linear-gradient(120deg, #6a11cb, #2575fc);
+  height: 100vh;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.logo {
+  text-align: center;
+  padding: 1rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.logo small {
+  color: rgba(255,255,255,0.7);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sub-menu .item {
+  padding-left: 2.5rem;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+
+.bottom {
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.logout {
+  width: 100%;
+  background: #e74c3c;
+  border: none;
+  color: #fff;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logout svg {
+  margin-right: 0.5rem;
+}
+/* Mobile Sidebar Slide-in */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    left: 0;
+    top: 54px;
+    height: calc(100vh - 54px);
+    width: 240px;
+    z-index: 200;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar.collapsed {
+    transform: translateX(-100%);
+  }
+}
+.menu-icon {
+  margin-right: 12px;
+  font-size: 1.1rem;
+  min-width: 20px;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.chevron {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+
