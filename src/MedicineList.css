@@ -3,7 +3,10 @@
   background: #f7f9fc;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+  overflow: visible; /* ✅ Ensure this */
+  position: relative; /* ✅ So z-index stacking works */
 }
+
 
 .medicine-list-container h2 {
   font-size: 26px;
@@ -100,9 +103,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999; /* ✅ Make sure this is high */
   padding: 20px;
 }
+
 
 /* Popup Box */
 .edit-popup-inner {

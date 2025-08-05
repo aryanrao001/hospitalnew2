@@ -1,3 +1,4 @@
+/* Container */
 .add-patient-container {
   background: #fff;
   padding: 30px;
@@ -5,8 +6,10 @@
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.07);
   max-width: 900px;
   margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Header */
 .add-patient-container h3 {
   font-size: 24px;
   margin-bottom: 25px;
@@ -16,6 +19,7 @@
   padding-left: 15px;
 }
 
+/* Form layout */
 .patient-form .form-group {
   margin-bottom: 20px;
 }
@@ -27,8 +31,10 @@
   color: #333;
 }
 
+/* Input fields */
 .patient-form input[type="text"],
 .patient-form input[type="tel"],
+.patient-form input[type="number"],
 .patient-form input[type="file"],
 .patient-form select,
 .patient-form textarea {
@@ -48,6 +54,7 @@
   outline: none;
 }
 
+/* Status options */
 .status-options {
   display: flex;
   gap: 20px;
@@ -58,6 +65,7 @@
   font-weight: normal;
 }
 
+/* Button styles */
 .form-buttons {
   margin-top: 30px;
   display: flex;
@@ -72,6 +80,7 @@
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .btn.reset {
@@ -87,6 +96,8 @@
 .btn:hover {
   opacity: 0.9;
 }
+
+/* Responsive scroll container (reused styles) */
 .add-medicine-container {
   height: 100vh;
   background: #f4f7fb;
@@ -94,7 +105,6 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 .form-box {
@@ -140,7 +150,15 @@ hr {
   background: #ddd;
   margin: 20px 0;
 }
-/* Responsive container layout */
+
+/* Grid layout for vitals (optional) */
+.vital-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+/* Media Queries */
 @media (max-width: 992px) {
   .add-patient-container,
   .form-box {

@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import './DashboardLayout.css';
 
 const DashboardLayout = () => {
+  
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {

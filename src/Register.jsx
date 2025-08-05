@@ -5,6 +5,7 @@ import './Auth.css';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 
 const Register = () => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +15,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post(`${BACKEND_URL}/api/auth/register`, {
         name,
         email,
         password,

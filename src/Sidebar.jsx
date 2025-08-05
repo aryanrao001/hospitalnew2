@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   const handleItemClick = () => {
     if (window.innerWidth < 768) {
-      setIsOpen(false); // Close sidebar only on small screens
+      setIsOpen(false);
     }
   };
 
@@ -46,6 +46,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   return (
     <nav className={sidebarClass}>
+      {/* LOGO always in center */}
       <div className="logo">
         <img src={hospitalLogo} alt="Logo" />
         {isOpen && (
@@ -87,20 +88,18 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           </li>
         )}
 
-        {(role === 'doctor' || role === 'receptionist') && (
+        {role === 'receptionist' && (
           <li>
             <div className="item toggle" onClick={() => setOpenAppointment(!openAppointment)}>
               {renderItem(<FaCalendarPlus />, 'Appointment', <FaChevronDown className={`chevron ${openAppointment ? 'rotated' : ''}`} />)}
             </div>
             {isOpen && openAppointment && (
               <ul className="sub-menu">
-                {role === 'receptionist' && (
-                  <li>
-                    <NavLink to="/dashboard/add-appointment" className="item" onClick={handleItemClick}>
-                      {renderItem(<FaPlus />, 'Add Appointment')}
-                    </NavLink>
-                  </li>
-                )}
+                <li>
+                  <NavLink to="/dashboard/add-appointment" className="item" onClick={handleItemClick}>
+                    {renderItem(<FaPlus />, 'Add Appointment')}
+                  </NavLink>
+                </li>
                 <li>
                   <NavLink to="/dashboard/appointment-list" className="item" onClick={handleItemClick}>
                     {renderItem(<FaClipboardList />, 'Appointment List')}
@@ -140,20 +139,8 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           </>
         )}
 
-        {/* ✅ Added below: Prescription Form for Doctor */}
-        {role === 'doctor' && (
-          <li>
-            <NavLink to="/dashboard/prescription-form" className="item" onClick={handleItemClick}>
-              {renderItem(<FaFileAlt />, 'Prescription Form')}
-            </NavLink>
-          </li>
-        )}
-
         <li className="bottom">
-          <button className="logout" onClick={() => {
-            handleLogout();
-            handleItemClick(); // Also close sidebar on logout in mobile
-          }}>
+          <button className="logout" onClick={() => { handleLogout(); handleItemClick(); }}>
             <FaSignOutAlt className="menu-icon" />
             {isOpen && 'Logout'}
           </button>

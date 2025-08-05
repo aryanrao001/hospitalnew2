@@ -3,12 +3,18 @@ import axios from 'axios';
 import './addPatient.css';
 
 const AddPatient = () => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
   const [form, setForm] = useState({
     name: '',
     phone: '',
     address: '',
     gender: '',
     status: 'active',
+    weight: '',
+    bp: '',
+    temperature: '',
+    spo2: '',
+    bloodSugar: ''
   });
 
   const handleChange = (e) => {
@@ -23,13 +29,19 @@ const AddPatient = () => {
       address: '',
       gender: '',
       status: 'active',
+      weight: '',
+      bp: '',
+      temperature: '',
+      spo2: '',
+      bloodSugar: ''
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/patients/add', form);
+     const res = await axios.post(`${BACKEND_URL}/api/patients/add`, form);
+
       console.log("✅ Patient saved:", res.data);
       alert("Patient added successfully");
       handleReset();
@@ -113,6 +125,62 @@ const AddPatient = () => {
           </div>
         </div>
 
+        {/* New Health Info Fields */}
+        <div className="form-group">
+          <label>Weight (kg)</label>
+          <input
+            type="text"
+            name="weight"
+            value={form.weight}
+            onChange={handleChange}
+            placeholder="Enter weight"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Blood Pressure (BP)</label>
+          <input
+            type="text"
+            name="bp"
+            value={form.bp}
+            onChange={handleChange}
+            placeholder="e.g. 120/80"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Temperature (°C)</label>
+          <input
+            type="text"
+            name="temperature"
+            value={form.temperature}
+            onChange={handleChange}
+            placeholder="e.g. 98.6"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>SPO2 (%)</label>
+          <input
+            type="text"
+            name="spo2"
+            value={form.spo2}
+            onChange={handleChange}
+            placeholder="e.g. 97"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Blood Sugar (mg/dL)</label>
+          <input
+            type="text"
+            name="bloodSugar"
+            value={form.bloodSugar}
+            onChange={handleChange}
+            placeholder="e.g. 110"
+          />
+        </div>
+
         <div className="form-buttons">
           <button type="button" className="btn reset" onClick={handleReset}>
             Reset
@@ -127,4 +195,6 @@ const AddPatient = () => {
 };
 
 export default AddPatient;
+
+
 

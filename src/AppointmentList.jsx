@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './AppointmentList.css';
 
 const AppointmentList = () => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+  
   const [appointments, setAppointments] = useState([]);
   const [editId, setEditId] = useState(null);
   const [formData, setFormData] = useState({
@@ -18,15 +20,19 @@ const AppointmentList = () => {
   }, []);
 
   const fetchAppointments = async () => {
-    const res = await fetch('http://localhost:5000/api/appointments');
-    const data = await res.json();
-    setAppointments(data);
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/appointments`);
+      const data = await res.json();
+      setAppointments(data);
+    } catch (err) {
+      console.error('❌ Failed to fetch appointments:', err);
+    }
   };
 
   const handleDelete = async (id) => {
     if (window.confirm('Delete this appointment?')) {
       try {
-        await fetch(`http://localhost:5000/api/appointments/${id}`, {
+        await fetch(`${BACKEND_URL}/api/appointments/${id}`, {
           method: 'DELETE',
         });
         fetchAppointments();
@@ -55,7 +61,7 @@ const AppointmentList = () => {
 
   const handleUpdate = async () => {
     try {
-      await fetch(`http://localhost:5000/api/appointments/${editId}`, {
+      await fetch(`${BACKEND_URL}/api/appointments/${editId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -71,7 +77,6 @@ const AppointmentList = () => {
     <div className="appointment-list-container">
       <h3>📋 Appointment List</h3>
 
-      {/* Table wrapper for horizontal scroll */}
       <div className="table-wrapper">
         <table className="appointment-table">
           <thead>
@@ -96,7 +101,7 @@ const AppointmentList = () => {
                 <td>{a.date}</td>
                 <td>{a.problem}</td>
                 <td>{a.status}</td>
-                <td className='buttonedit' >
+                <td className='buttonedit'>
                   <button className="edit-btn" onClick={() => handleEditClick(a)}>✏️</button>
                   <button className="delete-btn" onClick={() => handleDelete(a._id)}>🗑️</button>
                 </td>
@@ -111,12 +116,41 @@ const AppointmentList = () => {
         <div className="edit-popup-overlay">
           <div className="edit-popup">
             <h4>🛠️ Edit Appointment</h4>
-            <input name="patient" value={formData.patient} onChange={handleInputChange} placeholder="Patient Name" />
-            <input name="doctor" value={formData.doctor} onChange={handleInputChange} placeholder="Doctor Name" />
-            <input name="department" value={formData.department} onChange={handleInputChange} placeholder="Department" />
-            <input name="date" type="date" value={formData.date} onChange={handleInputChange} />
-            <input name="problem" value={formData.problem} onChange={handleInputChange} placeholder="Problem" />
-            <select name="status" value={formData.status} onChange={handleInputChange}>
+            <input
+              name="patient"
+              value={formData.patient}
+              onChange={handleInputChange}
+              placeholder="Patient Name"
+            />
+            <input
+              name="doctor"
+              value={formData.doctor}
+              onChange={handleInputChange}
+              placeholder="Doctor Name"
+            />
+            <input
+              name="department"
+              value={formData.department}
+              onChange={handleInputChange}
+              placeholder="Department"
+            />
+            <input
+              name="date"
+              type="date"
+              value={formData.date}
+              onChange={handleInputChange}
+            />
+            <input
+              name="problem"
+              value={formData.problem}
+              onChange={handleInputChange}
+              placeholder="Problem"
+            />
+            <select
+              name="status"
+              value={formData.status}
+              onChange={handleInputChange}
+            >
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
             </select>
@@ -132,6 +166,8 @@ const AppointmentList = () => {
 };
 
 export default AppointmentList;
+
+
 
 
 

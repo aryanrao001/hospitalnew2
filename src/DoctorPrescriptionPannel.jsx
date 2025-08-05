@@ -3,6 +3,7 @@ import axios from 'axios';
 import './doctorPrescription.css';
 
 const DoctorPrescriptionPanel = () => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
   const [patients, setPatients] = useState([]);
   const [selectedPatientId, setSelectedPatientId] = useState(null);
   const [allMedicines, setAllMedicines] = useState([]);
@@ -15,13 +16,13 @@ const DoctorPrescriptionPanel = () => {
   }, []);
 
   const fetchPatients = async () => {
-    const res = await axios.get('http://localhost:5000/api/patients');
+    const res = await axios.get(`${BACKEND_URL}/api/patients`);
     setPatients(res.data);
   };
 
   const fetchMasterData = async () => {
-    const medRes = await axios.get('http://localhost:5000/api/medicines');
-    const testRes = await axios.get('http://localhost:5000/api/tests');
+    const medRes = await axios.get(`${BACKEND_URL}/api/medicines`);
+    const testRes = await axios.get(`${BACKEND_URL}/api/tests`);
     setAllMedicines(medRes.data);
     setAllTests(testRes.data);
   };
@@ -75,7 +76,7 @@ const DoctorPrescriptionPanel = () => {
     };
 
     try {
-      await axios.put(`http://localhost:5000/api/patients/${selectedPatientId}`, finalData);
+      await axios.put(`${BACKEND_URL}/api/patients/${selectedPatientId}`, finalData);
       alert("Prescription Saved ✅");
       setSelectedPatientId(null);
       setPrescription({});

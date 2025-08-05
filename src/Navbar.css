@@ -1,9 +1,10 @@
+/* Navbar container */
 .navbar {
   height: 54px;
   background: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Added for better spacing */
+  justify-content: space-between;
   padding: 0 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -11,7 +12,7 @@
   z-index: 100;
 }
 
-/* Menu button */
+/* Menu (hamburger) button */
 .menu-btn {
   background: none;
   border: none;
@@ -22,8 +23,19 @@
   align-items: center;
 }
 
-/* Search icon */
-.search {
+/* Navbar title */
+.navbar-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+  text-align: center;
+}
+
+/* Search button */
+.search-btn {
+  background: none;
+  border: none;
   font-size: 1.4rem;
   cursor: pointer;
   color: #333;
@@ -31,14 +43,7 @@
   align-items: center;
 }
 
-/* Optional: add logo or nav title */
-.navbar-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Responsive tweaks */
+/* Responsive design: Tablet */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 0.75rem;
@@ -49,30 +54,29 @@
   }
 
   .menu-btn,
-  .search {
+  .search-btn {
     font-size: 1.2rem;
   }
 }
 
+/* Responsive design: Mobile */
 @media (max-width: 480px) {
   .navbar {
-    flex-direction: row;
     height: auto;
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .menu-btn,
-  .search {
+  .search-btn {
     font-size: 1.1rem;
     padding: 0.25rem;
   }
 
   .navbar-title {
     font-size: 0.95rem;
-    flex: 1;
-    text-align: center;
   }
 }
+
 
 
 

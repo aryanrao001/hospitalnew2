@@ -4,11 +4,18 @@ import './Navbar.css';
 
 const Navbar = ({ toggleSidebar }) => (
   <header className="navbar">
-    <button className="menu-btn" onClick={toggleSidebar}><FaBars /></button>
+    <button className="menu-btn" onClick={toggleSidebar}>
+      <FaBars />
+    </button>
+
+    <div className="navbar-title">Dashboard</div>
+
   
+   
   </header>
 );
 
 export default Navbar;
+
 
 
